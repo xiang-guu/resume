@@ -134,7 +134,7 @@ def dl3():
 
 @app.route('/charttip')
 def index2():
-    return render_template('charttip.html',graphJSON2=tip2(),graphJSON1=tip1())
+    return render_template('charttip.html',graphJSON=tip(),graphJSON2=tip2(),graphJSON1=tip1())
 def tip():
     df = pd.DataFrame(px.data.tips())
     fig = px.histogram(
