@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Responsive Resume</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display|PT+Sans'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/font-awesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400, 700'><link rel="stylesheet" href="../static/scss/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="section top clearfix">
+      <div class="logoCont"><img class="logo" src="../static/img/tx.jpeg"/></div>
+      <h1><br/>{{ person.name }}</h1>
+      <div class="moreInfo">
+        <p>{{ person.address }}<br/>{{ person.tel }}<br/>{{ person.email }}<br/>{{ person.major }}<br/><a href="{{url_for('index')}}" target="_blank">共享单车可视化</a><br/><a href="{{url_for('index1')}}" target="_blank">国家GDP可视化</a><br/><a href="{{url_for('index2')}}" target="_blank">小费可视化</a></p>
+      </div>
+      <p class="tagline"><br/>出生日期：{{ person.birthday }}<span><br/>{{ person.sex }}</span></p>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="section middle clearfix">
+      <div class="job">
+        <h2>教育经历<i class="fa fa-minus openBtn open"></i><span>{{ person.edtime }}</span></h2>
+        <p><strong>学校: </strong>{{ person.school }}<br/><strong>个人总结: </strong><br/><span class="brag">{{ person.summary }}</span></p>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="section middle clearfix">
+      <div class="job">
+        <h2>{{ person.ename1 }}<i class="fa fa-plus openBtn"></i><span>{{ person.time1 }} </span></h2>
+        <p><strong>语言: </strong>{{ person.dlanguage1 }}<br/><strong>工具: </strong>{{ person.tool1 }}<br/><span class="brag">{{ person.details1 }}</span></p>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="section middle clearfix">
+      <div class="job">
+        <h2>{{ person.ename2 }}<i class="fa fa-plus openBtn"></i><span>{{ person.time2 }} </span></h2>
+        <p><strong>语言:  </strong>{{ person.dlanguage2 }}<br/><strong>工具: </strong>{{ person.tool2 }}<br/><span class="brag">{{ person.details2 }}</span></p>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="section middle clearfix">
+      <div class="job">
+        <h2>业余爱好<i class="fa fa-plus openBtn"></i></h2>
+        <p><strong></strong><br/><strong></strong><br/><span class="brag">{{ person.hobby }}</span></p>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix half">
+  <div class="contIn">
+    <div class="section middle clearfix">
+      <div class="skills code odd">
+        <h3>语言和技术<i class="fa fa-code"></i></h3>
+        <ul>
+          <li class="prim">Java</li>
+          <li>JBDBC</li>
+          <li>JavaScript</li>
+          <li>JavaWeb</li>
+
+          <li class="prim">CSS</li>
+          <li>CSS3</li>
+          <li>Sass</li>
+          <li>Scss</li>
+          <li>Compass</li>
+          <li class="light">Bourbon</li>
+          <li class="prim">HTML</li>
+          <li>HMTL5</li>
+          <li>xhtml</li>
+          <li>Jade</li>
+          <li class="light">Haml</li>
+          <li class="light">SVG</li>
+          <li class="prim">Database</li>
+          <li>MySQL</li>
+          <li class="prim">Python</li>
+          <li>爬虫</li>
+          <li>数据可视化</li>
+          <li>机器学习</li>
+          <li>Flask</li>
+          <li class="prim">API</li>
+          <li>Google Maps</li>
+          <li>Google Places</li>
+          <li>Facebook</li>
+          <li>Pinterest</li>
+          <li>Instagram</li>
+          <li class="light">PayPal</li>
+          <li class="prim">Android</li>
+          <li>视图容器</li>
+          <li>Foundation游戏引擎</li>
+
+        </ul>
+      </div>
+      <div class="skills software">
+        <h3>工具<i class="fa fa-laptop"></i></h3>
+        <ul>
+          <li class="prim">Android</li>
+          <li>eclipse 安卓版</li>
+          <li>Android studio</li>
+
+          <li class="prim">python</li>
+          <li>sublime</li>
+          <li>pycharm</li>
+
+          <li class="prim">Java</li>
+          <li>eclipse</li>
+          <li>NetBeans IDE</li>
+
+          <li class="prim">Troubleshooting</li>
+          <li>StackOverflow</li>
+          <li>Chrome Dev Tools</li>
+          <li class="prim">Project Management</li>
+          <li>Asana</li>
+          <li>Jira</li>
+          <li>Hipchat</li>
+          <li>Basecamp</li>
+          <li>Slack</li>
+          <li class="prim">Site Optimization</li>
+          <li>Google Analytics</li>
+          <li>Webmaster/Console Tools</li>
+          <li>Website Insight</li>
+          <li>PageSpeed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+<div class="contOut clearfix">
+  <div class="contIn">
+    <div class="contracts clearfix">
+      <h3>主要专业课程</h3>
+      <div class="contract">
+        <h4>基础课程</h4>
+        <p class="desc">结构化程序设计<br/>数据结构与算法<br/>数据库系统</p><span class="date">2014</span>
+      </div>
+      <div class="contract">
+        <h4>Java</h4>
+        <p class="desc">web开发技术<br/>面向对象程序设计<br/></p>
+      </div>
+      <div class="contract">
+        <h4>python</h4>
+        <p class="desc">python编程技术<br/>爬虫与数据分析</p>
+      </div>
+      <div class="contract">
+        <h4>其它</h4>
+        <p class="desc">软件测试<br/>云平台技术<br/>软件体系结构</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="sm">
+  <li><a href="https://codepen.io/jhawes/"><i class="fa fa-codepen"></i></a></li>
+  <li><a href="https://twitter.com/jeremyhawes"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://www.facebook.com/1LittleDesigner"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://plus.google.com/+JeremyHawes/posts"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.flickr.com/photos/artbyhawes/"><i class="fa fa-flickr"></i></a></li>
+  <li><a href="http://instagram.com/haweshead/"><i class="fa fa-instagram"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/jeremyhawes"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="../static/js/script.js"></script>
+
+</body>
+</html>

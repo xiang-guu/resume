@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>1952-2007年的各国GDP实例</h1>
+    <h2>亚洲，欧洲，非洲，美洲，大洋洲GDP的变化以及他们的比较</h2>
+    <div id="chart3" class="chart3"></div>
+    <h2>1952-2007年的各国GDP的变化</h2>
+    <div id="chart" class="chart"></div>
+     <h2>五个洲中的国家GDP变化以及它们的比较</h2>
+    <div id="chart1" class="chart1"></div>
+</body>
+
+<script>
+    d3 = {{ graphJSON3 | safe }};
+    Plotly.newPlot('chart3', d3, {});
+</script>
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+<script>
+    d1 = {{ graphJSON1 | safe }};
+    Plotly.newPlot('chart1', d1, {});
+</script>
+
+</html>

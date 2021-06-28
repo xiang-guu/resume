@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});
+                    console.log(result);
+                }
+            });
+        }
+    </script>
+     <script>
+        function cb1(selection) {
+            $.getJSON({
+                url: "/callback1", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart1', result, {});
+                    console.log(2,result);
+                }
+            });
+        }
+    </script>
+    <script>
+        function cb2(selection) {
+            $.getJSON({
+                url: "/callback2", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart2', result, {});
+                    console.log(2,result);
+                }
+            });
+        }
+    </script>
+     <script>
+        function cb3(selection) {
+            $.getJSON({
+                url: "/callback3", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart3', result, {});
+                    console.log(3,result);
+                }
+            });
+        }
+    </script>
+    <script>
+        function cb4(selection) {
+            $.getJSON({
+                url: "/callback4", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart4', result, {});
+                    console.log(4,result);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+<!--<div>{{graphJSON}}</div>-->
+    <h1>2011/1/1-2012/12/19某公司共享单车使用情况</h1>
+    <h2>输入日期如：2011/1/1</h2>
+    <input type="text" id="fname" name="fname" onchange="cb(this.value)">
+    <div id="chart" class="chart"></div>
+    <h2>当天气温分布</h2>
+    <input type="text" id="fname1" name="fname1" onchange="cb1(this.value)">
+    <div id="chart1" class="chart1"></div>
+    <h2>当天体感温度分布</h2>
+    <input type="text" id="fname2" name="fname2" onchange="cb2(this.value)">
+    <div id="chart2" class="chart2"></div>
+    <h2>当天湿度分布</h2>
+    <input type="text" id="fname3" name="fname3" onchange="cb3(this.value)">
+    <div id="chart3" class="chart3"></div>
+    <h2>当天风速分布</h2>
+    <input type="text" id="fname4" name="fname4" onchange="cb4(this.value)">
+    <div id="chart4" class="chart4"></div>
+    <h2>共享单车使用量与季节的关系</h2>
+    <div id="chart5" class="chart5"></div>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+<script>
+    d1 = {{ graphJSON | safe }};
+    Plotly.newPlot('chart1', d1, {});
+</script>
+
+<script>
+    d2 = {{ graphJSON | safe }};
+    Plotly.newPlot('chart2', d2, {});
+</script>
+
+<script>
+    d3 = {{ graphJSON | safe }};
+    Plotly.newPlot('chart3', d3, {});
+</script>
+
+<script>
+    d4 = {{ graphJSON | safe }};
+    Plotly.newPlot('chart4', d4, {});
+</script>
+
+<script>
+    d5 = {{ graphJSON5 | safe }};
+    Plotly.newPlot('chart5', d5, {});
+</script>
+</html>
