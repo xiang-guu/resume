@@ -159,11 +159,11 @@ def tip1():
     fig1=px.box(df, x="day", y="total_bill", color="smoker")
     graphJSON1 = json.dumps(fig1, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON1
-def tip2():
-    df = pd.DataFrame(px.data.tips())
-    fig2=px.scatter(df, x="total_bill", y="tip", facet_row="time", facet_col="day", color="smoker", trendline="ols",
-                     category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
-    graphJSON2 = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
-    return graphJSON2
+# def tip2():
+#     df = pd.DataFrame(px.data.tips())
+#     fig2=px.scatter(df, x="total_bill", y="tip", facet_row="time", facet_col="day", color="smoker", trendline="ols",
+#                      category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+#     graphJSON2 = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
+#     return graphJSON2
 if __name__ == '__main__':
     app.run(debug= True,port=5000,threaded=True)
