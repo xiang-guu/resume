@@ -134,25 +134,25 @@ def dl3():
 
 @app.route('/charttip')
 def index2():
-    return render_template('charttip.html', graphJSON=tip(),graphJSON1=tip1(),graphJSON2=tip2())
-def tip():
-    df = pd.DataFrame(px.data.tips())
-    fig = px.histogram(
-        df,  # 绘图数据集
-        x="sex",  # 横轴为性别
-        y="tip",  # 纵轴为费用
-        histfunc="avg",  # 直方图显示的函数
-        color="smoker",  # 颜色
-        barmode="group",  # 柱状图模式
-        facet_row="time",  # 行取值
-        facet_col="day",  # 列取值
-        category_orders={  # 分类顺序
-            "day": ["Thur", "Fri", "Sat", "Sun"],
-            "time": ["Lunch", "Dinner"]}
-    )
+    return render_template('charttip.html',graphJSON1=tip1())
+# def tip():
+#     df = pd.DataFrame(px.data.tips())
+#     fig = px.histogram(
+#         df,  # 绘图数据集
+#         x="sex",  # 横轴为性别
+#         y="tip",  # 纵轴为费用
+#         histfunc="avg",  # 直方图显示的函数
+#         color="smoker",  # 颜色
+#         barmode="group",  # 柱状图模式
+#         facet_row="time",  # 行取值
+#         facet_col="day",  # 列取值
+#         category_orders={  # 分类顺序
+#             "day": ["Thur", "Fri", "Sat", "Sun"],
+#             "time": ["Lunch", "Dinner"]}
+#     )
 
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return graphJSON
+#     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+#     return graphJSON
 
 def tip1():
     df = pd.DataFrame(px.data.tips())
