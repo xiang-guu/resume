@@ -135,24 +135,24 @@ def dl3():
 @app.route('/charttip')
 def index2():
     return render_template('charttip.html',graphJSON2=tip2(),graphJSON1=tip1())
-# def tip():
-#     df = pd.DataFrame(px.data.tips())
-#     fig = px.histogram(
-#         df,  # 绘图数据集
-#         x="sex",  # 横轴为性别
-#         y="tip",  # 纵轴为费用
-#         histfunc="avg",  # 直方图显示的函数
-#         color="smoker",  # 颜色
-#         barmode="group",  # 柱状图模式
-#         facet_row="time",  # 行取值
-#         facet_col="day",  # 列取值
-#         category_orders={  # 分类顺序
-#             "day": ["Thur", "Fri", "Sat", "Sun"],
-#             "time": ["Lunch", "Dinner"]}
-#     )
+def tip():
+    df = pd.DataFrame(px.data.tips())
+    fig = px.histogram(
+        df,  # 绘图数据集
+        x="sex",  # 横轴为性别
+        y="tip",  # 纵轴为费用
+        histfunc="avg",  # 直方图显示的函数
+        color="smoker",  # 颜色
+        barmode="group",  # 柱状图模式
+        facet_row="time",  # 行取值
+        facet_col="day",  # 列取值
+        category_orders={  # 分类顺序
+            "day": ["Thur", "Fri", "Sat", "Sun"],
+            "time": ["Lunch", "Dinner"]}
+    )
 
-#     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-#     return graphJSON
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
 def tip1():
     df = pd.DataFrame(px.data.tips())
@@ -161,8 +161,17 @@ def tip1():
     return graphJSON1
 def tip2():
     df = pd.DataFrame(px.data.tips())
-    fig2=px.scatter(df, x="total_bill", y="tip", facet_row="time", facet_col="day", color="smoker", trendline="ols",
-                     category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+    fig2 = px.bar(
+        df,  # 数据集
+        x="sex",  # 横轴
+        y="total_bill",  # 纵轴
+        color="smoker",  # 颜色参数取值
+        barmode="group",  # 柱状图模式取值
+        facet_row="time",  # 行取值
+        facet_col="day",  # 列元素取值
+        category_orders={
+            "day": ["Thur", "Fri", "Sat", "Sun"],  # 分类顺序
+            "time": ["Lunch", "Dinner"]})
     graphJSON2 = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON2
 if __name__ == '__main__':
