@@ -55,28 +55,34 @@
         }
     </script>
 </head>
-
 <body style="font-family:arial, sans-serif">
 <!--<div>{{graphJSON}}</div>-->
     <h1>2011/1/1-2012/12/19某公司共享单车使用情况</h1>
     <h2>输入日期如：2011/1/1</h2>
     <input type="text" id="fname" name="fname" onchange="cb(this.value)">
     <div id="chart" class="chart"></div>
+    <div>在搜索框中输入时间（格式为年/月/日）即可得到一天中租车数量的变化情况。纵坐标表示总租车数量，横坐标表示一天中的24个小时。多观察几组数据即可发现一般图形中有两个峰，一个是早上7-8点，另一个是下午5-6点，分别是早高峰和晚高峰，符合实际情况。</div>
     <h2>当天气温分布</h2>
     <input type="text" id="fname1" name="fname1" onchange="cb1(this.value)">
     <div id="chart1" class="chart1"></div>
+    <div>在搜索框中输入时间（格式为年/月/日）即可得到一天中气温的的变化情况。纵坐标表示每小时的平均气温，横坐标表示一天中的24个小时。观察发现气温也是影响使用共享单车数量的因素之一。比如，在2011/1/1这一天早上的使用数量比较少，可以看出是气温较低是原因之一。</div>
     <h2>当天体感温度分布</h2>
     <input type="text" id="fname2" name="fname2" onchange="cb2(this.value)">
     <div id="chart2" class="chart2"></div>
+    <div>在搜索框中输入时间（格式为年/月/日）即可得到一天中体感温度的变化情况。纵坐标表示每小时的平均体感温度，横坐标表示一天中的24个小时。观察气温的变化与体感的变化非常相似，与其说气温对使用量的影响不如说是体感温度对使用量的影响。</div>
     <h2>当天湿度分布</h2>
     <input type="text" id="fname3" name="fname3" onchange="cb3(this.value)">
     <div id="chart3" class="chart3"></div>
+    <div>在搜索框中输入时间（格式为年/月/日）即可得到一天中湿度的变化情况。纵坐标表示每小时的平均湿度，横坐标表示一天中的24个小时。将湿度变化与总租车量变化对比发现，湿度对共享单车使用量的影响不大，或者说没有影响。</div>
     <h2>当天风速分布</h2>
     <input type="text" id="fname4" name="fname4" onchange="cb4(this.value)">
     <div id="chart4" class="chart4"></div>
+    <div>在搜索框中输入时间（格式为年/月/日）即可得到一天中风速的变化情况。纵坐标表示每小时的平均风速，横坐标表示一天中的24个小时。将湿风速变化与总租车量变化对比发现，风速对共享单车使用量的影响不大，只有在一些风速特别大的时候对租车量有影响。</div>
     <h2>共享单车使用量与季节的关系</h2>
     <div id="chart5" class="chart5"></div>
+    <div>这张散点图分为四个部分，分别表示春夏秋冬四个季节的共享单车使用数量，可以看出夏天和秋天也就是4-9月份的时候，共享单车使用是比较多的。从单个季节来说，每个季节的后半部分共享单车的使用量比较多，且一二月份使用量是最少的。</div>
 </body>
+
 
 <script>
     d = {{ graphJSON | safe }};
